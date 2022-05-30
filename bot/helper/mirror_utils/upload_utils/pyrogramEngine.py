@@ -1,5 +1,4 @@
-# Implement By - @anasty17 (https://github.com/SlamDevs/slam-mirrorbot/commit/d888a1e7237f4633c066f7c2bbfba030b83ad616)
-# (c) https://github.com/SlamDevs/slam-mirrorbot
+# (c) https://github.com/lutegglh/Shuna
 # All rights reserved
 
 import os
@@ -79,7 +78,6 @@ class TgUploader:
                     self.sent_msg = self.sent_msg.reply_video(video=up_path,
                                                               quote=True,
                                                               caption=cap_mono,
-                                                              parse_mode="html",
                                                               duration=duration,
                                                               width=480,
                                                               height=320,
@@ -98,7 +96,6 @@ class TgUploader:
                     self.sent_msg = self.sent_msg.reply_audio(audio=up_path,
                                                               quote=True,
                                                               caption=cap_mono,
-                                                              parse_mode="html",
                                                               duration=duration,
                                                               performer=artist,
                                                               title=title,
@@ -109,7 +106,6 @@ class TgUploader:
                     self.sent_msg = self.sent_msg.reply_photo(photo=up_path,
                                                               quote=True,
                                                               caption=cap_mono,
-                                                              parse_mode="html",
                                                               disable_notification=True,
                                                               progress=self.upload_progress)
                 else:
@@ -121,9 +117,7 @@ class TgUploader:
                     return
                 self.sent_msg = self.sent_msg.reply_document(document=up_path,
                                                              quote=True,
-                                                             thumb=thumb,
                                                              caption=cap_mono,
-                                                             parse_mode="html",
                                                              disable_notification=True,
                                                              progress=self.upload_progress)
                 if self.thumb is None and thumb is not None and os.path.lexists(thumb):

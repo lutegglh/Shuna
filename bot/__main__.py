@@ -107,56 +107,56 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.LeechCommand}</b> [download_url][magnet_link]: Upload file ke Telegram, Gunakan <b>/{BotCommands.LeechCommand} s</b> untuk memilih file sebelum uploading.
 <br><br>
-<b>/{BotCommands.TarLeechCommand}</b> [download_url][magnet_link]:  Start leeching to Telegram and upload it as (.tar)
+<b>/{BotCommands.TarLeechCommand}</b> [download_url][magnet_link]: Upload file ke Telegram dan Archive sebagai (.tar)
 <br><br>
-<b>/{BotCommands.ZipLeechCommand}</b> [download_url][magnet_link]: Start leeching to Telegram and upload it as (.zip)
+<b>/{BotCommands.ZipLeechCommand}</b> [download_url][magnet_link]: Upload file ke Telegram dan Archive sebagai (.zip)
 <br><br>
-<b>/{BotCommands.UnzipLeechCommand}</b> [download_url][magnet_link]: Start leeching to Telegram and if downloaded file is any archive, extracts it to Telegram
+<b>/{BotCommands.UnzipLeechCommand}</b> [download_url][magnet_link]: Ekstrak file dan upload ke Telegram.
 <br><br>
-<b>/{BotCommands.QbLeechCommand}</b> [magnet_link]: Start leeching to Telegram using qBittorrent, Use <b>/{BotCommands.QbLeechCommand} s</b> to select files before leeching
+<b>/{BotCommands.QbLeechCommand}</b> [magnet_link]: Upload Torrent ke Telegram, Gunakan <b>/{BotCommands.QbLeechCommand} s</b> untuk memilih file sebelum Uploading.
 <br><br>
-<b>/{BotCommands.QbTarLeechCommand}</b> [magnet_link]: Start leeching to Telegram using qBittorrent and upload it as (.tar)
+<b>/{BotCommands.QbTarLeechCommand}</b> [magnet_link]: Upload Torrent ke Telegram dan Archive sebagai (.tar)
 <br><br>
-<b>/{BotCommands.QbZipLeechCommand}</b> [magnet_link]: Start leeching to Telegram using qBittorrent and upload it as (.zip)
+<b>/{BotCommands.QbZipLeechCommand}</b> [magnet_link]: Upload Torrent ke Telegram dan Archive sebagai (.zip)
 <br><br>
-<b>/{BotCommands.QbUnzipLeechCommand}</b> [magnet_link]: Start leeching to Telegram using qBittorrent and if downloaded file is any archive, extracts it to Telegram
+<b>/{BotCommands.QbUnzipLeechCommand}</b> [magnet_link]: Ekstrak Torrent dan ke Telegram.
 <br><br>
-<b>/{BotCommands.CloneCommand}</b> [drive_url]: Copy file/folder to Google Drive
+<b>/{BotCommands.CloneCommand}</b> [drive_url]: Salin file dari Google Drive lain ke Google Drive Shuna.
 <br><br>
-<b>/{BotCommands.CountCommand}</b> [drive_url]: Count file/folder of Google Drive Links
+<b>/{BotCommands.CountCommand}</b> [drive_url]: Hitung ukuran dan jumlah file/folder di Google Drive.
 <br><br>
-<b>/{BotCommands.DeleteCommand}</b> [drive_url]: Delete file from Google Drive (Only Owner & Sudo)
+<b>/{BotCommands.DeleteCommand}</b> [drive_url]: Hapus file dari Google Drive Shuna (Hanya Owner & Sudo)
 <br><br>
-<b>/{BotCommands.WatchCommand}</b> [youtube-dl supported link]: Mirror through youtube-dl. Click <b>/{BotCommands.WatchCommand}</b> for more help
+<b>/{BotCommands.WatchCommand}</b> [youtube-dl supported link]: Mirror Video dari Situs yang didukung oleh Shuna. Klik <b>/{BotCommands.WatchCommand}</b> untuk lebih lanjut.
 <br><br>
-<b>/{BotCommands.TarWatchCommand}</b> [youtube-dl supported link]: Mirror through youtube-dl and tar before uploading
+<b>/{BotCommands.TarWatchCommand}</b> [youtube-dl supported link]: Mirror Video dari Situs yang didukung oleh Shuna dan Archive sebagai (.tar)
 <br><br>
-<b>/{BotCommands.ZipWatchCommand}</b> [youtube-dl supported link]: Mirror through youtube-dl and zip before uploading
+<b>/{BotCommands.ZipWatchCommand}</b> [youtube-dl supported link]: Mirror Video dari Situs yang didukung oleh Shuna dan Archive sebagai (.zip)
 <br><br>
-<b>/{BotCommands.LeechWatchCommand}</b> [youtube-dl supported link]: Leech through youtube-dl 
+<b>/{BotCommands.LeechWatchCommand}</b> [youtube-dl supported link]: Upload Video dari Situs yang didukung oleh Shuna ke Telegram.
 <br><br>
-<b>/{BotCommands.LeechTarWatchCommand}</b> [youtube-dl supported link]: Leech through youtube-dl and tar before uploading 
+<b>/{BotCommands.LeechTarWatchCommand}</b> [youtube-dl supported link]: Upload Video dari Situs yang didukung oleh Shuna ke Telegram dan Archive sebagai (.tar) 
 <br><br>
-<b>/{BotCommands.LeechZipWatchCommand}</b> [youtube-dl supported link]: Leech through youtube-dl and zip before uploading 
+<b>/{BotCommands.LeechZipWatchCommand}</b> [youtube-dl supported link]: Upload Video dari Situs yang didukung oleh Shuna ke Telegram dan Archive sebagai (.zip) 
 <br><br>
-<b>/{BotCommands.LeechSetCommand}</b>: Leech Settings 
+<b>/{BotCommands.LeechSetCommand}</b>: Upload Settings.
 <br><br>
-<b>/{BotCommands.SetThumbCommand}</b>: Reply photo to set it as Thumbnail
+<b>/{BotCommands.SetThumbCommand}</b>: Thumbnail untuk file yang diupload ke Telegram, Balas ke foto untuk set ke Telegram.
 <br><br>
-<b>/{BotCommands.CancelMirror}</b>: Reply to the message by which the download was initiated and that download will be cancelled
+<b>/{BotCommands.CancelMirror}</b>: Membatalkan Mirroring.
 <br><br>
-<b>/{BotCommands.CancelAllCommand}</b>: Cancel all running tasks
+<b>/{BotCommands.CancelAllCommand}</b>: Membatalkan semua Mirroring
 <br><br>
-<b>/{BotCommands.ListCommand}</b> [search term]: Searches the search term in the Google Drive, If found replies with the link
+<b>/{BotCommands.ListCommand}</b> [search term]: Cari file yang ada di Google Drive Shion.
 <br><br>
-<b>/{BotCommands.StatusCommand}</b>: Shows a status of all the downloads
+<b>/{BotCommands.StatusCommand}</b>: Tampilkan semua Tugas yang sedang dikerjakan Shion.
 <br><br>
-<b>/{BotCommands.StatsCommand}</b>: Show Stats of the machine the bot is hosted on
+<b>/{BotCommands.StatsCommand}</b>: Info Shion
 '''
 help = Telegraph(access_token=telegraph_token).create_page(
-        title='Slam Mirrorbot Help',
-        author_name='Slam Mirrorbot',
-        author_url='https://github.com/SlamDevs/slam-mirrorbot',
+        title='Shion Help',
+        author_name='luteg',
+        author_url='https://t.me/luteg_glh',
         html_content=help_string_telegraph,
     )["path"]
 

@@ -77,7 +77,6 @@ class TgUploader:
                         up_path = new_path
                     self.sent_msg = self.sent_msg.reply_video(video=up_path,
                                                               quote=True,
-                                                              caption=cap_mono,
                                                               duration=duration,
                                                               width=480,
                                                               height=320,
@@ -95,7 +94,6 @@ class TgUploader:
                     artist = metadata.get("artist") if metadata.has("artist") else None
                     self.sent_msg = self.sent_msg.reply_audio(audio=up_path,
                                                               quote=True,
-                                                              caption=cap_mono,
                                                               duration=duration,
                                                               performer=artist,
                                                               title=title,
@@ -105,7 +103,6 @@ class TgUploader:
                 elif file.upper().endswith(IMAGE_SUFFIXES):
                     self.sent_msg = self.sent_msg.reply_photo(photo=up_path,
                                                               quote=True,
-                                                              caption=cap_mono,
                                                               disable_notification=True,
                                                               progress=self.upload_progress)
                 else:

@@ -105,7 +105,7 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.QbUnzipMirrorCommand}</b> [magnet_link]: Ekstrak file dari Torrent dan mirror ke Google Drive.
 <br><br>
-<b>/{BotCommands.LeechCommand}</b> [download_url][magnet_link]: Start leeching to Telegram, Use <b>/{BotCommands.LeechCommand} s</b> to select files before leeching
+<b>/{BotCommands.LeechCommand}</b> [download_url][magnet_link]: Upload file ke Telegram, Gunakan <b>/{BotCommands.LeechCommand} s</b> untuk memilih file sebelum uploading.
 <br><br>
 <b>/{BotCommands.TarLeechCommand}</b> [download_url][magnet_link]:  Start leeching to Telegram and upload it as (.tar)
 <br><br>

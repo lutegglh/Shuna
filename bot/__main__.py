@@ -87,23 +87,23 @@ def log(update, context):
 
 
 help_string_telegraph = f'''<br>
-<b>/{BotCommands.HelpCommand}</b>: To get this message
+<b>/{BotCommands.HelpCommand}</b>: Bantuan tentang shuna.
 <br><br>
-<b>/{BotCommands.MirrorCommand}</b> [download_url][magnet_link]: Start mirroring the link to Google Drive.
+<b>/{BotCommands.MirrorCommand}</b> [download_url][magnet_link]: Untuk mirror ke Google Drive. 
 <br><br>
-<b>/{BotCommands.TarMirrorCommand}</b> [download_url][magnet_link]: Start mirroring and upload the archived (.tar) version of the download
+<b>/{BotCommands.TarMirrorCommand}</b> [download_url][magnet_link]: Untuk mirror dan Archive file sebagai (.tar)
 <br><br>
-<b>/{BotCommands.ZipMirrorCommand}</b> [download_url][magnet_link]: Start mirroring and upload the archived (.zip) version of the download
+<b>/{BotCommands.ZipMirrorCommand}</b> [download_url][magnet_link]: Untuk mirror dan Archive file sebagai (.zip)
 <br><br>
-<b>/{BotCommands.UnzipMirrorCommand}</b> [download_url][magnet_link]: Starts mirroring and if downloaded file is any archive, extracts it to Google Drive
+<b>/{BotCommands.UnzipMirrorCommand}</b> [download_url][magnet_link]: Ekstrak file dan mirror ke Google Drive.
 <br><br>
-<b>/{BotCommands.QbMirrorCommand}</b> [magnet_link]: Start Mirroring using qBittorrent, Use <b>/{BotCommands.QbMirrorCommand} s</b> to select files before downloading
+<b>/{BotCommands.QbMirrorCommand}</b> [magnet_link]: Mirror Torrent, Gunakan <b>/{BotCommands.QbMirrorCommand} s</b> untuk memilih file sebelum mirroring.
 <br><br>
-<b>/{BotCommands.QbTarMirrorCommand}</b> [magnet_link]: Start mirroring using qBittorrent and upload the archived (.tar) version of the download
+<b>/{BotCommands.QbTarMirrorCommand}</b> [magnet_link]: Untuk mirror Torrent dan archive file ke (.tar)
 <br><br>
-<b>/{BotCommands.QbZipMirrorCommand}</b> [magnet_link]: Start mirroring using qBittorrent and upload the archived (.zip) version of the download
+<b>/{BotCommands.QbZipMirrorCommand}</b> [magnet_link]: Untuk mirror Torrent dan archive file ke (.zip)
 <br><br>
-<b>/{BotCommands.QbUnzipMirrorCommand}</b> [magnet_link]: Starts mirroring using qBittorrent and if downloaded file is any archive, extracts it to Google Drive
+<b>/{BotCommands.QbUnzipMirrorCommand}</b> [magnet_link]: Ekstrak file dari Torrent dan mirror ke Google Drive.
 <br><br>
 <b>/{BotCommands.LeechCommand}</b> [download_url][magnet_link]: Start leeching to Telegram, Use <b>/{BotCommands.LeechCommand} s</b> to select files before leeching
 <br><br>

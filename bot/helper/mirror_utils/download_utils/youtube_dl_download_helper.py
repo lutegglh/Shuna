@@ -5,7 +5,7 @@ import logging
 from yt_dlp import YoutubeDL, DownloadError
 from threading import RLock
 from time import time
-from re import search
+from re
 
 from bot import download_dict_lock, download_dict
 from bot.helper.ext_utils.bot_utils import get_readable_file_size
@@ -158,7 +158,7 @@ class YoutubeDLHelper:
 
     def add_download(self, link, path, qual, name):
         pattern = '^.*(youtu\.be\/|youtube.com\/)(playlist?)'
-        if match(pattern, link):
+        if re.match(pattern, link):
             self.opts['ignoreerrors'] = True
         self.__onDownloadStart()
         self.extractMetaData(link, qual, name)

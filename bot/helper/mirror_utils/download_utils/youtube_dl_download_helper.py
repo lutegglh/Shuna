@@ -151,7 +151,6 @@ class YoutubeDLHelper(DownloadHelper):
         if re.match(pattern, link):
             self.opts['ignoreerrors'] = True
         self.__onDownloadStart()
-        self.extractMetaData(link, qual, name)
         LOGGER.info(f"Downloading with YT-DL: {link}")
         self.__gid = f"{self.vid_id}{self.__listener.uid}"
         if qual == "audio":

@@ -62,6 +62,22 @@ INDEX_URLS = []
 def getConfig(name: str):
     return os.environ[name]
 
+try:
+    NETRC_URL = getConfig('NETRC_URL')
+    if len(NETRC_URL) == 0:
+        raise KeyError
+    try:
+        res = rget(NETRC_URL)
+        if res.status_code == 200:
+            with open('.netrc', 'wb+') as f:
+                f.write(res.content)
+        else:
+            log_error(f"Failed to download .netrc {res.status_code}")
+    except Exception as e:
+        log_error(f"NETRC_URL: {e}")
+except:
+    pass
+
 def mktable():
     try:
         conn = psycopg2.connect(DB_URI)

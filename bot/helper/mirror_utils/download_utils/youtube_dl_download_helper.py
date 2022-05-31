@@ -156,30 +156,19 @@ class YoutubeDLHelper:
         except ValueError:
             self.__onDownloadError("Download Stopped by User!")
 
-    def add_download(name, qual, playlist, args, self, link, path):
-        if playlist:
+    def add_download(self, link, path, qual, name):
+        pattern = '^.*(youtu\.be\/|youtube.com\/)(playlist?)'
+        if re.match(pattern, link):
             self.opts['ignoreerrors'] = True
-        self.__gid = ''.join(random.SystemRandom().choices(string.ascii_letters + string.digits, k=10))
         self.__onDownloadStart()
-        if qual.startswith('ba/b'):
-            audio_info = qual.split('-')
-            qual = audio_info[0]
-            if len(audio_info) == 2:
-                rate = audio_info[1]
-            else:
-                rate = 320
-            self.opts['postprocessors'] = [{'key': 'FFmpegExtractAudio','preferredcodec': 'mp3','preferredquality': f'{rate}'}]
-        self.opts['format'] = qual
-        LOGGER.info(f"Downloading with YT-DLP: {link}")
-        self.extractMetaData(link, name, args)
-        if self.__is_cancelled:
-            return
-        if STORAGE_THRESHOLD is not None:
-            acpt = check_storage_threshold(self.size, self.__listener.isZip)
-            if not acpt:
-                msg = f'You must leave {STORAGE_THRESHOLD}GB free storage.'
-                msg += f'\nYour File/Folder size is {get_readable_file_size(self.size)}'
-                return self.__onDownloadError(msg)
+        self.extractMetaData(link, qual, name)
+        LOGGER.info(f"Downloading with YT-DL: {link}")
+        self.__gid = f"{self.vid_id}{self.__listener.uid}"
+        if qual == "audio":
+          self.opts['format'] = 'bestaudio/best'
+          self.opts['postprocessors'] = [{'key': 'FFmpegExtractAudio','preferredcodec': 'mp3','preferredquality': '320',}]
+        else:
+          self.opts['format'] = qual
         if not self.is_playlist:
             self.opts['outtmpl'] = f"{path}/{self.name}"
         else:
@@ -187,19 +176,4 @@ class YoutubeDLHelper:
         self.__download(link)
 
     def cancel_download(self):
-        self.__is_cancelled = True
-        LOGGER.info(f"Cancelling Download: {self.name}")
-        if not self.__downloading:
-            self.__onDownloadError("Download Cancelled by User!")
-
-    def __set_args(self, args):
-        args = args.split('|')
-        for arg in args:
-            xy = arg.split(':')
-            if xy[1].startswith('^'):
-                xy[1] = int(xy[1].split('^')[1])
-            elif xy[1].lower() == 'true':
-                xy[1] = True
-            elif xy[1].lower() == 'false':
-                xy[1] = False
-            self.opts[xy[0]] = xy[1]
+        self.is_cancelled = True

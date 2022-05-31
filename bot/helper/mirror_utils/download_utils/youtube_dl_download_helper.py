@@ -7,7 +7,6 @@ import time
 from .download_helper import DownloadHelper
 from yt_dlp import YoutubeDL, DownloadError
 from threading import RLock
-from time import time
 
 from bot import download_dict_lock, download_dict
 from bot.helper.ext_utils.bot_utils import get_readable_file_size

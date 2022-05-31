@@ -10,4 +10,5 @@ data*
 *.pickle
 authorized_chats.txt
 log.txt
+.netrc
 accounts/*

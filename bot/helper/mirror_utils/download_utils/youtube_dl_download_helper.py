@@ -162,7 +162,6 @@ class YoutubeDLHelper(DownloadHelper):
             self.opts['outtmpl'] = f"{path}/{self.name}"
         else:
             self.opts['outtmpl'] = f"{path}/{self.name}/%(title)s.%(ext)s"
-        self.__download(link)
 
     def cancel_download(self):
         self.is_cancelled = True

@@ -156,7 +156,7 @@ class YoutubeDLHelper:
         except ValueError:
             self.__onDownloadError("Download Stopped by User!")
 
-    def add_download(playlist, args, self, link, path, name, qual):
+    def add_download(name, qual, playlist, args, self, link, path):
         if playlist:
             self.opts['ignoreerrors'] = True
         self.__gid = ''.join(random.SystemRandom().choices(string.ascii_letters + string.digits, k=10))

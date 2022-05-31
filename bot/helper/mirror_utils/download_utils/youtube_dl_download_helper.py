@@ -2,6 +2,7 @@ import random
 import string
 import logging
 import re
+import time
 
 from .download_helper import DownloadHelper
 from yt_dlp import YoutubeDL, DownloadError

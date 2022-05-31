@@ -3,6 +3,7 @@ import string
 import logging
 import re
 
+from .download_helper import DownloadHelper
 from yt_dlp import YoutubeDL, DownloadError
 from threading import RLock
 from time import time

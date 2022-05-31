@@ -7,10 +7,11 @@ from threading import RLock
 from time import time
 from re import search
 
-from bot import download_dict_lock, download_dict
+from bot import download_dict_lock, download_dict, STORAGE_THRESHOLD
 from bot.helper.ext_utils.bot_utils import get_readable_file_size
 from bot.helper.telegram_helper.message_utils import sendStatusMessage
 from ..status_utils.youtube_dl_download_status import YoutubeDLDownloadStatus
+from bot.helper.ext_utils.fs_utils import check_storage_threshold
 
 LOGGER = logging.getLogger(__name__)
 
@@ -156,7 +157,9 @@ class YoutubeDLHelper:
         except ValueError:
             self.__onDownloadError("Download Stopped by User!")
 
-    def add_download(self, link, path, name, qual):
+    def add_download(self, link, path, name, qual, playlist, args):
+        if playlist:
+            self.opts['ignoreerrors'] = True
         self.__gid = ''.join(random.SystemRandom().choices(string.ascii_letters + string.digits, k=10))
         self.__onDownloadStart()
         if qual.startswith('ba/b'):

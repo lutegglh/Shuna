@@ -50,13 +50,13 @@ def start(update, context):
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
-Oisshuuu👋 Shion bisa mirror link kalian ke Google Drive:)
+Oisshuuu👋 Shuna bisa mirror link kalian ke Google Drive:)
 Ketik /{BotCommands.HelpCommand} untuk lebih lanjut.
 '''
         sendMarkup(start_string, context.bot, update, reply_markup)
     else:
         sendMarkup(
-            'join grup ya.\nuntuk menggunakan Shion :).',
+            'join grup ya.\nuntuk menggunakan Shuna :).',
             context.bot,
             update,
             reply_markup,
@@ -147,21 +147,21 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.CancelAllCommand}</b>: Membatalkan semua Mirroring
 <br><br>
-<b>/{BotCommands.ListCommand}</b> [search term]: Cari file yang ada di Google Drive Shion.
+<b>/{BotCommands.ListCommand}</b> [search term]: Cari file yang ada di Google Drive Shuna.
 <br><br>
-<b>/{BotCommands.StatusCommand}</b>: Tampilkan semua Tugas yang sedang dikerjakan Shion.
+<b>/{BotCommands.StatusCommand}</b>: Tampilkan semua Tugas yang sedang dikerjakan Shuna.
 <br><br>
-<b>/{BotCommands.StatsCommand}</b>: Info Shion
+<b>/{BotCommands.StatsCommand}</b>: Info Shuna
 '''
 help = Telegraph(access_token=telegraph_token).create_page(
-        title='Shion Help',
+        title='Shuna Help',
         author_name='luteg',
         author_url='https://t.me/luteg_glh',
         html_content=help_string_telegraph,
     )["path"]
 
 help_string = f'''
-/{BotCommands.PingCommand}: Ping ke Shion
+/{BotCommands.PingCommand}: Ping ke Shuna
 
 /{BotCommands.AuthorizeCommand}: Authorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
 

@@ -315,7 +315,7 @@ class GoogleDriveHelper:
         files = self.total_files
         folders = self.total_folders
         typ = self.typee
-        self.__listener.onUploadComplete(link, size)
+        self.__listener.onUploadComplete(files, folders, typ, size)
         return link
 
 

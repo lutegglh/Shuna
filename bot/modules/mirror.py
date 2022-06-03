@@ -462,6 +462,37 @@ def _mirror(bot, update, isTar=False, extract=False, isZip=False, isQbit=False, 
         ariaDlManager.add_download(link, f'{DOWNLOAD_DIR}{listener.uid}/', listener, name)
         sendStatusMessage(update, bot)
 
+        if not is_url(link) and not is_magnet(link) or len(link) == 0:
+            if file is None:
+                reply_text = reply_to.text
+                if is_url(reply_text) or is_magnet(reply_text):
+                    link = reply_text.strip()
+            elif file.mime_type != "application/x-bittorrent" and not isQbit:
+                listener = MirrorListener(bot, message, isZip, extract, isQbit, isLeech, pswd, tag)
+                Thread(target=TelegramDownloadHelper(listener).add_download, args=(message, f'{DOWNLOAD_DIR}{listener.uid}/', name)).start()
+                if multi > 1:
+                    sleep(4)
+                    nextmsg = type('nextmsg', (object, ), {'chat_id': message.chat_id, 'message_id': message.reply_to_message.message_id + 1})
+                    nextmsg = sendMessage(message_args[0], bot, nextmsg)
+                    nextmsg.from_user.id = message.from_user.id
+                    multi -= 1
+                    sleep(4)
+                    Thread(target=_mirror, args=(bot, nextmsg, isZip, extract, isQbit, isLeech, pswd, multi)).start()
+                return
+            else:
+                link = file.get_file().file_path
+
+    if multi > 1:
+        sleep(4)
+        nextmsg = type('nextmsg', (object, ), {'chat_id': message.chat_id, 'message_id': message.reply_to_message.message_id + 1})
+        msg = message_args[0]
+        if len(mesg) > 2:
+            msg += '\n' + mesg[1] + '\n' + mesg[2]
+        nextmsg = sendMessage(msg, bot, nextmsg)
+        nextmsg.from_user.id = message.from_user.id
+        multi -= 1
+        sleep(4)
+        Thread(target=_mirror, args=(bot, nextmsg, isZip, extract, isQbit, isLeech, pswd, multi)).start()
 
 def mirror(update, context):
     _mirror(context.bot, update)

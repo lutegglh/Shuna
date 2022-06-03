@@ -468,7 +468,7 @@ def _mirror(bot, update, isTar=False, extract=False, isZip=False, isQbit=False, 
         ariaDlManager.add_download(link, f'{DOWNLOAD_DIR}{listener.uid}/', listener, name)
         sendStatusMessage(update, bot)
 
-    reply_to = message.reply_to_message
+    reply_to = Message.reply_to_message
     if reply_to is not None:
         file = None
         media_array = [reply_to.document, reply_to.video, reply_to.audio]
@@ -493,7 +493,7 @@ def _mirror(bot, update, isTar=False, extract=False, isZip=False, isQbit=False, 
                 Thread(target=TelegramDownloadHelper(listener).add_download, args=(message, f'{DOWNLOAD_DIR}{listener.uid}/', name)).start()
                 if multi > 1:
                     sleep(4)
-                    nextmsg = type('nextmsg', (object, ), {'chat_id': message.chat_id, 'message_id': message.reply_to_message.message_id + 1})
+                    nextmsg = type('nextmsg', (object, ), {'chat_id': message.chat_id, 'message_id': Message.reply_to_message.message_id + 1})
                     nextmsg = sendMessage(message_args[0], bot, nextmsg)
                     nextmsg.from_user.id = message.from_user.id
                     multi -= 1

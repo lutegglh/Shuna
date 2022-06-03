@@ -10,6 +10,7 @@ import string
 import time
 import shutil
 
+from time import sleep, time
 from telegram.ext import CommandHandler
 from telegram import InlineKeyboardMarkup
 from fnmatch import fnmatch

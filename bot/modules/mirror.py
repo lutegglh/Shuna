@@ -12,7 +12,7 @@ import shutil
 
 from time import sleep, time
 from telegram.ext import CommandHandler
-from telegram.message import Message
+from telegram.message import message
 from telegram import InlineKeyboardMarkup
 from fnmatch import fnmatch
 
@@ -49,7 +49,6 @@ ariaDlManager.start_listener()
 class MirrorListener(listeners.MirrorListeners):
     def __init__(self, bot, update, pswd, isTar=False, extract=False, isZip=False, isQbit=False, isLeech=False):
         super().__init__(bot, update)
-        self.message = message
         self.isTar = isTar
         self.extract = extract
         self.isZip = isZip

@@ -312,7 +312,10 @@ class GoogleDriveHelper:
                 self.updater.cancel()
                 if self.is_cancelled:
                     return
-        self.__listener.onUploadComplete(link, size, mime_type, self.name, typ)
+        files = self.total_files
+        folders = self.total_folders
+        typ = self.typee
+        self.__listener.onUploadComplete(link, size, files, folders, typ)
         return link
 
 

@@ -468,6 +468,21 @@ def _mirror(bot, update, isTar=False, extract=False, isZip=False, isQbit=False, 
         ariaDlManager.add_download(link, f'{DOWNLOAD_DIR}{listener.uid}/', listener, name)
         sendStatusMessage(update, bot)
 
+    reply_to = message.reply_to_message
+    if reply_to is not None:
+        file = None
+        media_array = [reply_to.document, reply_to.video, reply_to.audio]
+        for i in media_array:
+            if i is not None:
+                file = i
+                break
+
+        if not reply_to.from_user.is_bot:
+            if reply_to.from_user.username:
+                tag = f"@{reply_to.from_user.username}"
+            else:
+                tag = reply_to.from_user.mention_html(reply_to.from_user.first_name)
+
         if not is_url(link) and not is_magnet(link) or len(link) == 0:
             if file is None:
                 reply_text = reply_to.text

@@ -326,7 +326,7 @@ class MirrorListener(listeners.MirrorListeners):
         else:
             update_all_messages()
 
-def _mirror(bot, update, isTar=False, extract=False, isZip=False, isQbit=False, isLeech=False):
+def _mirror(bot, update, isTar=False, extract=False, isZip=False, isQbit=False, isLeech=False, multi=0):
     mesg = update.message.text.split('\n')
     message_args = mesg[0].split(' ')
     name_args = mesg[0].split('|')
@@ -336,6 +336,9 @@ def _mirror(bot, update, isTar=False, extract=False, isZip=False, isQbit=False, 
         if link == "s":
             qbitsel = True
             link = message_args[2]
+        elif link.isdigit():
+            multi = int(link)
+            raise IndexError
         if link.startswith("|") or link.startswith("pswd: "):
             link = ''
     except IndexError:

@@ -484,7 +484,7 @@ def _mirror(bot, update, isTar=False, extract=False, isZip=False, isQbit=False, 
                 Thread(target=TelegramDownloadHelper(listener).add_download, args=(message, f'{DOWNLOAD_DIR}{listener.uid}/', name)).start()
                 if multi > 1:
                     sleep(4)
-                    nextmsg = type('nextmsg', (object, ), {'chat_id': Message.chat_id, 'message_id': Message.reply_to_Message.message_id + 1})
+                    nextmsg = type('nextmsg', (object, ), {'chat_id': Message.chat_id, 'message_id': message.reply_to_message.message_id + 1})
                     nextmsg = sendMessage(message_args[0], bot, nextmsg)
                     nextmsg.from_user.id = message.from_user.id
                     multi -= 1
@@ -496,7 +496,7 @@ def _mirror(bot, update, isTar=False, extract=False, isZip=False, isQbit=False, 
 
     if multi > 1:
         sleep(4)
-        nextmsg = type('nextmsg', (object, ), {'chat_id': Message.chat_id, 'message_id': Message.reply_to_Message.message_id + 1})
+        nextmsg = type('nextmsg', (object, ), {'chat_id': Message.chat_id, 'message_id': message.reply_to_message.message_id + 1})
         msg = message_args[0]
         if len(mesg) > 2:
             msg += '\n' + mesg[1] + '\n' + mesg[2]

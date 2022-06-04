@@ -17,7 +17,7 @@ class _BotCommands:
         self.PingCommand = 'ping'
         self.RestartCommand = 'deadrestart'
         self.StatsCommand = 'stats'
-        self.HelpCommand = 'help'
+        self.HelpCommand = 'bantuan'
         self.LogCommand = 'log'
         self.SpeedCommand = 'deadspeedtest'
         self.CloneCommand = 'clone'

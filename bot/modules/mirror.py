@@ -378,7 +378,7 @@ def _mirror(bot, update, isTar=False, extract=False, isZip=False, isQbit=False, 
             if file is None:
                 reply_text = reply_to.text
                 reply_text = re.split('\n ', reply_text)[0]
-                if bot_utils.is_url(reply_text) or bot_utils.is_magnet(reply_text):
+                if bot_utils.is_url(reply_text, auto_delete_message) or bot_utils.is_magnet(reply_text, auto_delete_message):
                     link = reply_text
 
             elif isQbit:

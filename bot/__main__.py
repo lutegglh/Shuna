@@ -163,9 +163,9 @@ help = Telegraph(access_token=telegraph_token).create_page(
 help_string = f'''
 /{BotCommands.PingCommand}: Ping ke Shuna
 
-/{BotCommands.AuthorizeCommand}: Authorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
+/{BotCommands.AuthorizeCommand}: Izinkan Chat untuk menggunakan Shuna. (Hanya Owner & Sudo)
 
-/{BotCommands.UnAuthorizeCommand}: Izinkan Chat untuk menggunakan Shuna. (Hanya Owner & Sudo)
+/{BotCommands.UnAuthorizeCommand}: Hapus Izin Chat untuk menggunakan Shuna. (Hanya Owner & Sudo)
 
 /{BotCommands.AuthorizedUsersCommand}: Lihat daftar chat yang diizinkan menggunakan Shuna. (Hanya Owner & Sudo)
 

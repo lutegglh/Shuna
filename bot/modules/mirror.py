@@ -277,7 +277,7 @@ class MirrorListener(listeners.MirrorListeners):
                             siurls = short_url(share_urls)
                             buttons.buildbutton("🌐 View Link", siurls)
                     else:
-                        buttons.buildbutton("⚡ DOWNLOAD", share_url)
+                        buttons.buildbutton("⚡ Index Link", share_url)
                         if VIEW_LINK:
                             buttons.buildbutton("🌐 View Link", share_urls)
             if BUTTON_FOUR_NAME is not None and BUTTON_FOUR_URL is not None:

@@ -1,6 +1,6 @@
 class _BotCommands:
     def __init__(self):
-        self.StartCommand = 'mulai'
+        self.StartCommand = 'start'
         self.MirrorCommand = 'm'
         self.UnzipMirrorCommand = 'uzipm'
         self.TarMirrorCommand = 'tarm'
@@ -17,7 +17,7 @@ class _BotCommands:
         self.PingCommand = 'ping'
         self.RestartCommand = 'deadrestart'
         self.StatsCommand = 'stats'
-        self.HelpCommand = 'bantuan'
+        self.HelpCommand = 'help'
         self.LogCommand = 'log'
         self.SpeedCommand = 'deadspeedtest'
         self.CloneCommand = 'clone'

@@ -12,7 +12,7 @@ from bot.helper.telegram_helper import button_build, message_utils
 
 LOGGER = logging.getLogger(__name__)
 
-MAGNET_REGEX = r"magnet:\?xt=urn:btih:[a-zA-Z0-9]*"
+MAGNET_REGEX = r"magnetltg:\?xt=urn:btih:[a-zA-Z0-9]*"
 
 URL_REGEX = r"(?:(?:https?|ftp):\/\/)?[\w/\-?=%.]+\.[\w/\-?=%.]+"
 
@@ -128,37 +128,37 @@ def get_readable_message():
                 globals()['PAGE_NO'] -= 1
             start = COUNT
         for index, download in enumerate(list(download_dict.values())[start:], start=1):
-            msg += f"<b>🔤Name:</b> <code>{download.name()}</code>"
-            msg += f"\n<b>❓Status:</b> <i>{download.status()}</i>"
+            msg += f"<b>🔤 Nama:</b> <code>{download.name()}</code>"
+            msg += f"\n<b>❓ Status:</b> <i>{download.status()}</i>"
             if download.status() not in [
                 MirrorStatus.STATUS_ARCHIVING,
                 MirrorStatus.STATUS_EXTRACTING,
                 MirrorStatus.STATUS_SPLITTING,
             ]:
-                msg += f"\n<code>{get_progress_bar_string(download)} {download.progress()}</code>"
+                msg += f"\n💥 <code>{get_progress_bar_string(download)} {download.progress()}</code>"
                 if download.status() == MirrorStatus.STATUS_CLONING:
-                    msg += f"\n<b>♻️Cloned:</b> <code>{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}</code>"
+                    msg += f"\n<b>♻️ Cloned:</b> <code>{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}</code>"
                 elif download.status() == MirrorStatus.STATUS_UPLOADING:
-                    msg += f"\n<b>🔺Uploaded:</b> <code>{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}</code>"
+                    msg += f"\n<b>🔺 Uploaded:</b> <code>{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}</code>"
                 else:
-                    msg += f"\n<b>🔻Downloaded:</b> <code>{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}</code>"
-                msg += f"\n<b>🚀Speed:</b> <code>{download.speed()}</code> <b>⏳ETA:</b> <code>{download.eta()}</code>"
+                    msg += f"\n<b>🔻 Downloaded:</b> <code>{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}</code>"
+                msg += f"\n<b>🚀 Speed:</b> <code>{download.speed()}</code>\n<b>⏳Sisa Waktu:</b> <code>{download.eta()}</code>"
                 try:
-                    msg += f"\n<b>🌱Seeders:</b> <code>{download.aria_download().num_seeders}</code>" \
-                           f" | <b>Peers:</b> <code>{download.aria_download().connections}</code>"
+                    msg += f"\n<b>🌱 Seeders:</b> <code>{download.aria_download().num_seeders}</code>" \
+                           f" | <b>🌱 Peers:</b> <code>{download.aria_download().connections}</code>"
                 except:
                     pass
                 try:
-                    msg += f"\n<b>🌱Seeders:</b> <code>{download.torrent_info().num_seeds}</code>" \
-                           f" | <b>Leechers:</b> <code>{download.torrent_info().num_leechs}</code>"
+                    msg += f"\n<b>🌱 Seeders:</b> <code>{download.torrent_info().num_seeds}</code>" \
+                           f" | <b>🌱 Leechers:</b> <code>{download.torrent_info().num_leechs}</code>"
                 except:
                     pass
-                msg += f"\n<b>❌Cancel:</b> <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
+                msg += f"\n<b>❌ Cancel:</b> <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
             msg += "\n\n"
             if STATUS_LIMIT is not None and index == STATUS_LIMIT:
                 break
         if STATUS_LIMIT is not None and dick_no > STATUS_LIMIT:
-            msg += f"<b>Page:</b> <code>{PAGE_NO}</code>/<code>{pages}</code> | <b>Tasks:</b> <code>{dick_no}</code>\n"
+            msg += f"<b>🗒️ Halaman:</b> <code>{PAGE_NO}</code>/<code>{pages}</code> | <b>🤖 Tugas:</b> <code>{dick_no}</code>\n"
             buttons = button_build.ButtonMaker()
             buttons.sbutton("Previous", "pre")
             buttons.sbutton("Next", "nex")

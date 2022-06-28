@@ -610,7 +610,7 @@ class GoogleDriveHelper:
                     content += f'<b> | <a href="https://telegra.ph/{self.path[nxt_page]}">Next</a></b>'
                     nxt_page += 1
             Telegraph(access_token=telegraph_token).edit_page(path = self.path[prev_page],
-                                 title = 'Shuna Search',
+                                 title = 'Shion Search',
                                  author_name='luteg',
                                  author_url='https://t.me/luteg_glh',
                                  html_content=content)

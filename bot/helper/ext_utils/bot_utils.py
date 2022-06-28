@@ -142,7 +142,7 @@ def get_readable_message():
                     msg += f"\n<b>🔺 Uploaded:</b> <code>{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}</code>"
                 else:
                     msg += f"\n<b>🔻 Downloaded:</b> <code>{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}</code>"
-                msg += f"\n<b>🚀 Speed:</b> <code>{download.speed()}</code>\n<b>⏳Sisa Waktu:</b> <code>{download.eta()}</code>"
+                msg += f"\n<b>🚀 Speed:</b> <code>{download.speed()}</code>\n<b>⏳ Sisa Waktu:</b> <code>{download.eta()}</code>"
                 try:
                     msg += f"\n<b>🌱 Seeders:</b> <code>{download.aria_download().num_seeders}</code>" \
                            f" | <b>🌱 Peers:</b> <code>{download.aria_download().connections}</code>"
@@ -160,8 +160,8 @@ def get_readable_message():
         if STATUS_LIMIT is not None and dick_no > STATUS_LIMIT:
             msg += f"<b>🗒️ Halaman:</b> <code>{PAGE_NO}</code>/<code>{pages}</code> | <b>🤖 Tugas:</b> <code>{dick_no}</code>\n"
             buttons = button_build.ButtonMaker()
-            buttons.sbutton("Previous", "pre")
-            buttons.sbutton("Next", "nex")
+            buttons.sbutton("⬅️", "pre")
+            buttons.sbutton("➡️", "nex")
             button = InlineKeyboardMarkup(buttons.build_menu(2))
             return msg, button
         return msg, ""

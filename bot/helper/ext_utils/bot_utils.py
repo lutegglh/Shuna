@@ -142,7 +142,7 @@ def get_readable_message():
                     msg += f"\n<b>🔺 Uploaded:</b> <code>{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}</code>"
                 else:
                     msg += f"\n<b>🔻 Downloaded:</b> <code>{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}</code>"
-                msg += f"\n<b>🚀 Speed:</b> <code>{download.speed()}</code>\n<b>⏳ Sisa Waktu:</b> <code>{download.eta()}</code>"
+                msg += f"\n<b>🚀 Speed:</b> <code>{download.speed()}</code>\n<b>⏳ Sisa Waktu:</b> <code>{download.eta()}</code>\n👤 {uname} | #️⃣ {self.uid}"
                 try:
                     msg += f"\n<b>🌱 Seeders:</b> <code>{download.aria_download().num_seeders}</code>" \
                            f" | <b>🌱 Peers:</b> <code>{download.aria_download().connections}</code>"

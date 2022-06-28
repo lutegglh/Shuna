@@ -9,6 +9,7 @@ from bot import dispatcher, download_dict, download_dict_lock, STATUS_LIMIT
 from telegram import InlineKeyboardMarkup
 from telegram.ext import CallbackQueryHandler
 from bot.helper.telegram_helper import button_build, message_utils
+from bot.modules.mirror import onUploadComplete
 
 LOGGER = logging.getLogger(__name__)
 

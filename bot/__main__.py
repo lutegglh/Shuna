@@ -50,13 +50,13 @@ def start(update, context):
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
-Oisshuuu👋 Shuna bisa mirror link kalian ke Google Drive:)
+Oisshuuu👋 Shion bisa mirror link kalian ke Google Drive:)
 Ketik /{BotCommands.HelpCommand} untuk lebih lanjut.
 '''
         sendMarkup(start_string, context.bot, update, reply_markup)
     else:
         sendMarkup(
-            'join grup ya.\nuntuk menggunakan Shuna :).',
+            'join grup ya.\nuntuk menggunakan Shion :).',
             context.bot,
             update,
             reply_markup,
@@ -87,7 +87,7 @@ def log(update, context):
 
 
 help_string_telegraph = f'''<br>
-<b>/{BotCommands.HelpCommand}</b>: Bantuan tentang shuna.
+<b>/{BotCommands.HelpCommand}</b>: Bantuan tentang Shion.
 <br><br>
 <b>/{BotCommands.MirrorCommand}</b> [download_url][magnet_link]: Untuk mirror ke Google Drive. 
 <br><br>
@@ -121,23 +121,23 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.QbUnzipLeechCommand}</b> [magnet_link]: Ekstrak Torrent dan ke Telegram.
 <br><br>
-<b>/{BotCommands.CloneCommand}</b> [drive_url]: Salin file dari Google Drive lain ke Google Drive Shuna.
+<b>/{BotCommands.CloneCommand}</b> [drive_url]: Salin file dari Google Drive lain ke Google Drive Shion.
 <br><br>
 <b>/{BotCommands.CountCommand}</b> [drive_url]: Hitung ukuran dan jumlah file/folder di Google Drive.
 <br><br>
-<b>/{BotCommands.DeleteCommand}</b> [drive_url]: Hapus file dari Google Drive Shuna (Hanya Owner & Sudo)
+<b>/{BotCommands.DeleteCommand}</b> [drive_url]: Hapus file dari Google Drive Shion (Hanya Owner & Sudo)
 <br><br>
-<b>/{BotCommands.WatchCommand}</b> [youtube-dl supported link]: Mirror Video dari Situs yang didukung oleh Shuna. Klik <b>/{BotCommands.WatchCommand}</b> untuk lebih lanjut.
+<b>/{BotCommands.WatchCommand}</b> [youtube-dl supported link]: Mirror Video dari Situs yang didukung oleh Shion. Klik <b>/{BotCommands.WatchCommand}</b> untuk lebih lanjut.
 <br><br>
-<b>/{BotCommands.TarWatchCommand}</b> [youtube-dl supported link]: Mirror Video dari Situs yang didukung oleh Shuna dan Archive sebagai (.tar)
+<b>/{BotCommands.TarWatchCommand}</b> [youtube-dl supported link]: Mirror Video dari Situs yang didukung oleh Shion dan Archive sebagai (.tar)
 <br><br>
-<b>/{BotCommands.ZipWatchCommand}</b> [youtube-dl supported link]: Mirror Video dari Situs yang didukung oleh Shuna dan Archive sebagai (.zip)
+<b>/{BotCommands.ZipWatchCommand}</b> [youtube-dl supported link]: Mirror Video dari Situs yang didukung oleh Shion dan Archive sebagai (.zip)
 <br><br>
-<b>/{BotCommands.LeechWatchCommand}</b> [youtube-dl supported link]: Upload Video dari Situs yang didukung oleh Shuna ke Telegram.
+<b>/{BotCommands.LeechWatchCommand}</b> [youtube-dl supported link]: Upload Video dari Situs yang didukung oleh Shion ke Telegram.
 <br><br>
-<b>/{BotCommands.LeechTarWatchCommand}</b> [youtube-dl supported link]: Upload Video dari Situs yang didukung oleh Shuna ke Telegram dan Archive sebagai (.tar) 
+<b>/{BotCommands.LeechTarWatchCommand}</b> [youtube-dl supported link]: Upload Video dari Situs yang didukung oleh Shion ke Telegram dan Archive sebagai (.tar) 
 <br><br>
-<b>/{BotCommands.LeechZipWatchCommand}</b> [youtube-dl supported link]: Upload Video dari Situs yang didukung oleh Shuna ke Telegram dan Archive sebagai (.zip) 
+<b>/{BotCommands.LeechZipWatchCommand}</b> [youtube-dl supported link]: Upload Video dari Situs yang didukung oleh Shion ke Telegram dan Archive sebagai (.zip) 
 <br><br>
 <b>/{BotCommands.LeechSetCommand}</b>: Upload Settings.
 <br><br>
@@ -147,27 +147,27 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.CancelAllCommand}</b>: Membatalkan semua Mirroring
 <br><br>
-<b>/{BotCommands.ListCommand}</b> [search term]: Cari file yang ada di Google Drive Shuna.
+<b>/{BotCommands.ListCommand}</b> [search term]: Cari file yang ada di Google Drive Shion.
 <br><br>
-<b>/{BotCommands.StatusCommand}</b>: Tampilkan semua Tugas yang sedang dikerjakan Shuna.
+<b>/{BotCommands.StatusCommand}</b>: Tampilkan semua Tugas yang sedang dikerjakan Shion.
 <br><br>
-<b>/{BotCommands.StatsCommand}</b>: Info Shuna
+<b>/{BotCommands.StatsCommand}</b>: Info Shion
 '''
 help = Telegraph(access_token=telegraph_token).create_page(
-        title='Shuna Help',
+        title='Shion Help',
         author_name='luteg',
         author_url='https://t.me/luteg_glh',
         html_content=help_string_telegraph,
     )["path"]
 
 help_string = f'''
-/{BotCommands.PingCommand}: Ping ke Shuna
+/{BotCommands.PingCommand}: Ping ke Shion
 
-/{BotCommands.AuthorizeCommand}: Izinkan Chat untuk menggunakan Shuna. (Hanya Owner & Sudo)
+/{BotCommands.AuthorizeCommand}: Izinkan Chat untuk menggunakan Shion. (Hanya Owner & Sudo)
 
-/{BotCommands.UnAuthorizeCommand}: Hapus Izin Chat untuk menggunakan Shuna. (Hanya Owner & Sudo)
+/{BotCommands.UnAuthorizeCommand}: Hapus Izin Chat untuk menggunakan Shion. (Hanya Owner & Sudo)
 
-/{BotCommands.AuthorizedUsersCommand}: Lihat daftar chat yang diizinkan menggunakan Shuna. (Hanya Owner & Sudo)
+/{BotCommands.AuthorizedUsersCommand}: Lihat daftar chat yang diizinkan menggunakan Shion. (Hanya Owner & Sudo)
 
 /{BotCommands.AddSudoCommand}: Tambahan pengguna Sudo (Hanya Owner)
 
@@ -225,7 +225,7 @@ def main():
         os.remove(".restartmsg")
     elif OWNER_ID:
         try:
-            text = "<b>Shuna Restart!</b>"
+            text = "<b> </b>"
             bot.sendMessage(chat_id=OWNER_ID, text=text, parse_mode=ParseMode.HTML)
             if AUTHORIZED_CHATS:
                 for i in AUTHORIZED_CHATS:

@@ -412,9 +412,9 @@ class GoogleDriveHelper:
                 buttons = button_build.ButtonMaker()
                 if SHORTENER is not None and SHORTENER_API is not None:
                     surl = short_url(durl)
-                    buttons.buildbutton("☁️ Drive Link", surl)
+                    buttons.buildbutton("☁️ G-Drive Link", surl)
                 else:
-                    buttons.buildbutton("☁️ Drive Link", durl)
+                    buttons.buildbutton("☁️ G-Drive Link", durl)
                 if INDEX_URL is not None:
                     url_path = requests.utils.quote(f'{meta.get("name")}')
                     url = f'{INDEX_URL}/{url_path}/'
@@ -430,16 +430,16 @@ class GoogleDriveHelper:
                 buttons = button_build.ButtonMaker()
                 if SHORTENER is not None and SHORTENER_API is not None:
                     surl = short_url(durl)
-                    buttons.buildbutton("☁️ Drive Link", surl)
+                    buttons.buildbutton("☁️ G-Drive Link", surl)
                 else:
-                    buttons.buildbutton("☁️ Drive Link", durl)
+                    buttons.buildbutton("☁️ G-Drive Link", durl)
                 try:
                     typ = file.get('mimeType')
                 except:
                     typ = 'File'
                 try:
-                    msg += f'\n<b>Size: </b><code>{get_readable_file_size(int(meta.get("size")))}</code>'
-                    msg += f'\n<b>Type: </b><code>{typ}</code>'
+                    msg += f'\n<b>💽 Ukuran: </b><code>{get_readable_file_size(int(meta.get("size")))}</code>'
+                    msg += f'\n<b>❓ Jenis: </b><code>{typ}</code>'
                 except TypeError:
                     pass
                 if INDEX_URL is not None:
@@ -732,7 +732,7 @@ class GoogleDriveHelper:
             elif not response["files"]:
                 continue
             if not Title:
-                msg += f'<h4>Search Result For: {fileName}</h4><br><br>'
+                msg += f'<h4>🔎 Ditemukan Hasil Dari: {fileName}</h4><br><br>'
                 Title = True
             if len(DRIVES_NAMES) > 1 and DRIVES_NAMES[index] is not None:
                 msg += f"╾────────────╼<br><b>{DRIVES_NAMES[index]}</b><br>╾────────────╼<br>"
@@ -807,7 +807,7 @@ class GoogleDriveHelper:
 
         for content in self.telegraph_content :
             self.path.append(Telegraph(access_token=telegraph_token).create_page(
-                                                    title = 'Shuna Search',
+                                                    title = 'Shion Search',
                                                     author_name='luteg',
                                                     author_url='https://t.me/luteg_glh',
                                                     html_content=content
@@ -817,9 +817,9 @@ class GoogleDriveHelper:
         if self.num_of_path > 1:
             self.edit_telegraph()
 
-        msg = f"<b>Found <code>{all_contents_count}</code> results for <code>{fileName}</code></b>"
+        msg = f"<b>Ditemukan <code>{all_contents_count}</code> Hasil Dari <code>{fileName}</code></b>"
         buttons = button_build.ButtonMaker()
-        buttons.buildbutton("🔎 VIEW", f"https://telegra.ph/{self.path[0]}")
+        buttons.buildbutton("🔎 Lihat", f"https://telegra.ph/{self.path[0]}")
 
         return msg, InlineKeyboardMarkup(buttons.build_menu(1))
 
@@ -839,13 +839,13 @@ class GoogleDriveHelper:
             LOGGER.info(f"Counting: {name}")
             if drive_file['mimeType'] == self.__G_DRIVE_DIR_MIME_TYPE:
                 self.gDrive_directory(**drive_file)
-                msg += f'<b>Filename: </b><code>{name}</code>'
-                msg += f'\n<b>Size: </b><code>{get_readable_file_size(self.total_bytes)}</code>'
-                msg += '\n<b>Type: </b><code>Folder</code>'
-                msg += f'\n<b>SubFolders: </b><code>{self.total_folders}</code>'
-                msg += f'\n<b>Files: </b><code>{self.total_files}</code>'
+                msg += f'<b>🔤 Nama: </b><code>{name}</code>'
+                msg += f'\n<b>💽 Ukuran: </b><code>{get_readable_file_size(self.total_bytes)}</code>'
+                msg += '\n<b>❓ Jenis: </b><code>Folder</code>'
+                msg += f'\n<b>📂 SubFolders: </b><code>{self.total_folders}</code>'
+                msg += f'\n<b>📁 Files: </b><code>{self.total_files}</code>'
             else:
-                msg += f'<b>Filename: </b><code>{name}</code>'
+                msg += f'<b>🔤 Nama: </b><code>{name}</code>'
                 try:
                     typee = drive_file['mimeType']
                 except:
@@ -853,9 +853,9 @@ class GoogleDriveHelper:
                 try:
                     self.total_files += 1
                     self.gDrive_file(**drive_file)
-                    msg += f'\n<b>Size: </b><code>{get_readable_file_size(self.total_bytes)}</code>'
-                    msg += f'\n<b>Type: </b><code>{typee}</code>'
-                    msg += f'\n<b>Files: </b><code>{self.total_files}</code>'
+                    msg += f'\n<b>💽 Ukuran: </b><code>{get_readable_file_size(self.total_bytes)}</code>'
+                    msg += f'\n<b>❓ Jenis: </b><code>{typee}</code>'
+                    msg += f'\n<b>📁 Files: </b><code>{self.total_files}</code>'
                 except TypeError:
                     pass
         except Exception as err:

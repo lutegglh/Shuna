@@ -112,7 +112,7 @@ def sendStatusMessage(msg, bot):
     currentTime = get_readable_time(time.time() - botStartTime)
     progress, buttons = get_readable_message()
     progress += f"<b>🖥️ CPU:</b> <code>{psutil.cpu_percent()}%</code>" \
-           f" <b>💾 RAM:</b> <code>{psutil.virtual_memory().percent}%</code>" \
+           f" <b>💾 RAM:</b> <code>{psutil.virtual_memory().percent}%</code>"
     with download_dict_lock:
         dlspeed_bytes = 0
         uldl_bytes = 0

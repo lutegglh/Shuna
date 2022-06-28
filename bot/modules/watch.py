@@ -20,8 +20,8 @@ def _watch(bot: Bot, update, isTar=False, isZip=False, isLeech=False):
         msg = f"/{BotCommands.WatchCommand} [youtube-dl supported link] [quality] |[CustomName] untuk mirror dengan youtube-dl.\n\n"
         msg += "<b>Catatan: Jika ingin memilih Resolusi video, mengubah nama video, atau download audio only, ikuti cara ini</b>\n\nKualitas yang bisa di mirror: audio, 144, 240, 360, 480, 720, 1080, 2160."
         msg += "\n\nJika ingin memberi nama sesuka hati, ketik setelah memberi simbol ini |"
-        msg += f"\n\nContoh:\n<code>/{BotCommands.WatchCommand} https://youtu.be/blablablabla 720 |Shuna</code>\n\n"
-        msg += "Maka file tersebut akan dimirror di Resolusi 720p, dan akan miliki nama <b>Shuna</b>"
+        msg += f"\n\nContoh:\n<code>/{BotCommands.WatchCommand} https://youtu.be/blablablabla 720 |Shion</code>\n\n"
+        msg += "Maka file tersebut akan dimirror di Resolusi 720p, dan akan miliki nama <b>Shion</b>"
         sendMessage(msg, bot, update)
         return
     

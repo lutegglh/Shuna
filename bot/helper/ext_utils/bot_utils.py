@@ -129,28 +129,28 @@ def get_readable_message():
             start = COUNT
         for index, download in enumerate(list(download_dict.values())[start:], start=1):
             msg += f"<b>🔤 </b> <b><code>{download.name()}</code></b>"
-            msg += f"\n<b>❓ </b> <b><i>{download.status()}</i></b>"
+            msg += f"\n<b>❓ </b> <i>{download.status()}</i>"
             if download.status() not in [
                 MirrorStatus.STATUS_ARCHIVING,
                 MirrorStatus.STATUS_EXTRACTING,
                 MirrorStatus.STATUS_SPLITTING,
             ]:
-                msg += f"\n💥 <code>{get_progress_bar_string(download)} / {download.progress()}</code>"
+                msg += f"\n💥 {get_progress_bar_string(download)} / {download.progress()}"
                 if download.status() == MirrorStatus.STATUS_CLONING:
-                    msg += f"\n<b>♻️ Cloned:</b> <code>{get_readable_file_size(download.processed_bytes())}</code> / <code>{download.size()}</code>"
+                    msg += f"\n<b>♻️ Cloned:</b> {get_readable_file_size(download.processed_bytes())} / {download.size()}"
                 elif download.status() == MirrorStatus.STATUS_UPLOADING:
-                    msg += f"\n<b>🔺 </b> <b>{get_readable_file_size(download.processed_bytes())}</b> / <b>{download.size()}</b>"
+                    msg += f"\n<b>🔺 </b> {get_readable_file_size(download.processed_bytes())} / {download.size()}"
                 else:
-                    msg += f"\n<b>🔻 </b> <b>{get_readable_file_size(download.processed_bytes())}</b> / <b>{download.size()}</b>"
-                msg += f"\n<b>🚀 </b> <b>{download.speed()}</b> | <b>⏳ </b> <b>{download.eta()}</b>"
+                    msg += f"\n<b>🔻 </b> {get_readable_file_size(download.processed_bytes())} / {download.size()}"
+                msg += f"\n<b>🚀 </b> {download.speed()} | <b>⏳ </b> {download.eta()}"
                 try:
-                    msg += f"\n<b>🌱 Seeders:</b> <code>{download.aria_download().num_seeders}</code>" \
-                           f" | <b>🌱 Peers:</b> <code>{download.aria_download().connections}</code>"
+                    msg += f"\n<b>🌱 Seeders:</b> {download.aria_download().num_seeders}" \
+                           f" | <b>🌱 Peers:</b> {download.aria_download().connections}"
                 except:
                     pass
                 try:
-                    msg += f"\n<b>🌱 Seeders:</b> <code>{download.torrent_info().num_seeds}</code>" \
-                           f" | <b>🌱 Leechers:</b> <code>{download.torrent_info().num_leechs}</code>"
+                    msg += f"\n<b>🌱 Seeders:</b> {download.torrent_info().num_seeds}" \
+                           f" | <b>🌱 Leechers:</b> {download.torrent_info().num_leechs}"
                 except:
                     pass
                 msg += f"\n❌ <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
@@ -158,7 +158,7 @@ def get_readable_message():
             if STATUS_LIMIT is not None and index == STATUS_LIMIT:
                 break
         if STATUS_LIMIT is not None and dick_no > STATUS_LIMIT:
-            msg += f"<b>🗒️ Halaman:</b> <b>{PAGE_NO}</b>/<b>{pages}</b> | <b>🤖 Tugas:</b> <b>{dick_no}</b>\n"
+            msg += f"<b>🗒️ Halaman:</b> {PAGE_NO}/{pages} | <b>🤖 Tugas:</b> {dick_no}\n"
             buttons = button_build.ButtonMaker()
             buttons.sbutton("⬅️", "pre")
             buttons.sbutton("➡️", "nex")

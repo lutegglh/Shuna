@@ -139,10 +139,10 @@ def get_readable_message():
                 if download.status() == MirrorStatus.STATUS_CLONING:
                     msg += f"\n<b>♻️ Cloned:</b> <code>{get_readable_file_size(download.processed_bytes())}</code> / <code>{download.size()}</code>"
                 elif download.status() == MirrorStatus.STATUS_UPLOADING:
-                    msg += f"\n<b>🔺 </b> <code>{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}</code>"
+                    msg += f"\n<b>🔺 </b> <b>{get_readable_file_size(download.processed_bytes())}</b> / <b>{download.size()}</b>"
                 else:
-                    msg += f"\n<b>🔻 </b> <code>{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}</code>"
-                msg += f"\n<b>🚀 </b> <code>{download.speed()}</code> | <b>⏳ </b> <code>{download.eta()}</code>"
+                    msg += f"\n<b>🔻 </b> <b>{get_readable_file_size(download.processed_bytes())}</b> / <b>{download.size()}</b>"
+                msg += f"\n<b>🚀 </b> <b>{download.speed()}</b> | <b>⏳ </b> <b>{download.eta()}</b>"
                 try:
                     msg += f"\n<b>🌱 Seeders:</b> <code>{download.aria_download().num_seeders}</code>" \
                            f" | <b>🌱 Peers:</b> <code>{download.aria_download().connections}</code>"
@@ -158,7 +158,7 @@ def get_readable_message():
             if STATUS_LIMIT is not None and index == STATUS_LIMIT:
                 break
         if STATUS_LIMIT is not None and dick_no > STATUS_LIMIT:
-            msg += f"<b>🗒️ Halaman:</b> <code>{PAGE_NO}</code>/<code>{pages}</code> | <b>🤖 Tugas:</b> <code>{dick_no}</code>\n"
+            msg += f"<b>🗒️ Halaman:</b> <b>{PAGE_NO}</b>/<b>{pages}</b> | <b>🤖 Tugas:</b> <b>{dick_no}</b>\n"
             buttons = button_build.ButtonMaker()
             buttons.sbutton("⬅️", "pre")
             buttons.sbutton("➡️", "nex")

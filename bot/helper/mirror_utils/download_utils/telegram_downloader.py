@@ -100,7 +100,7 @@ class TelegramDownloadHelper(DownloadHelper):
 
             if download:
                 if STOP_DUPLICATE and not self.__listener.isLeech:
-                    LOGGER.info('<b>🔗 Memeriksa Link...</b>')
+                    LOGGER.info('<b>🔗 Memeriksa link...</b>')
                     gd = GoogleDriveHelper()
                     smsg, button = gd.drive_list(name, True, True)
                     if smsg:

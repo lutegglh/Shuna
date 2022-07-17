@@ -45,18 +45,18 @@ def stats(update, context):
 
 def start(update, context):
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("OWNER", "https://t.me/luteg_glh")
-    buttons.buildbutton("Group", "https://t.me/mirror_gan")
+    buttons.buildbutton("👤 Owner", "https://t.me/luteg_glh")
+    buttons.buildbutton("👥 Group", "https://t.me/mirror_gan")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         start_string = f'''
-Oisshuuu👋 Shion bisa mirror link kalian ke Google Drive:)
-Ketik /{BotCommands.HelpCommand} untuk lebih lanjut.
+Oisshuuu👋 Eru bisa mirror link kalian ke Google Drive:)
+Ketik /{BotCommands.HelpCommand} untuk melihat bantuan.
 '''
         sendMarkup(start_string, context.bot, update, reply_markup)
     else:
         sendMarkup(
-            'join grup ya.\nuntuk menggunakan Shion :).',
+            'join grup ya.\nuntuk menggunakan Eru :).',
             context.bot,
             update,
             reply_markup,
@@ -87,7 +87,7 @@ def log(update, context):
 
 
 help_string_telegraph = f'''<br>
-<b>/{BotCommands.HelpCommand}</b>: Bantuan tentang Shion.
+<b>/{BotCommands.HelpCommand}</b>: Bantuan tentang Eru.
 <br><br>
 <b>/{BotCommands.MirrorCommand}</b> [download_url][magnet_link]: Untuk mirror ke Google Drive. 
 <br><br>
@@ -97,14 +97,6 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.UnzipMirrorCommand}</b> [download_url][magnet_link]: Ekstrak file dan mirror ke Google Drive.
 <br><br>
-<b>/{BotCommands.QbMirrorCommand}</b> [magnet_link]: Mirror Torrent, Gunakan <b>/{BotCommands.QbMirrorCommand} s</b> untuk memilih file sebelum mirroring.
-<br><br>
-<b>/{BotCommands.QbTarMirrorCommand}</b> [magnet_link]: Untuk mirror Torrent dan archive file ke (.tar)
-<br><br>
-<b>/{BotCommands.QbZipMirrorCommand}</b> [magnet_link]: Untuk mirror Torrent dan archive file ke (.zip)
-<br><br>
-<b>/{BotCommands.QbUnzipMirrorCommand}</b> [magnet_link]: Ekstrak file dari Torrent dan mirror ke Google Drive.
-<br><br>
 <b>/{BotCommands.LeechCommand}</b> [download_url][magnet_link]: Upload file ke Telegram, Gunakan <b>/{BotCommands.LeechCommand} s</b> untuk memilih file sebelum uploading.
 <br><br>
 <b>/{BotCommands.TarLeechCommand}</b> [download_url][magnet_link]: Upload file ke Telegram dan Archive sebagai (.tar)
@@ -113,31 +105,23 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.UnzipLeechCommand}</b> [download_url][magnet_link]: Ekstrak file dan upload ke Telegram.
 <br><br>
-<b>/{BotCommands.QbLeechCommand}</b> [magnet_link]: Upload Torrent ke Telegram, Gunakan <b>/{BotCommands.QbLeechCommand} s</b> untuk memilih file sebelum Uploading.
-<br><br>
-<b>/{BotCommands.QbTarLeechCommand}</b> [magnet_link]: Upload Torrent ke Telegram dan Archive sebagai (.tar)
-<br><br>
-<b>/{BotCommands.QbZipLeechCommand}</b> [magnet_link]: Upload Torrent ke Telegram dan Archive sebagai (.zip)
-<br><br>
-<b>/{BotCommands.QbUnzipLeechCommand}</b> [magnet_link]: Ekstrak Torrent dan ke Telegram.
-<br><br>
-<b>/{BotCommands.CloneCommand}</b> [drive_url]: Salin file dari Google Drive lain ke Google Drive Shion.
+<b>/{BotCommands.CloneCommand}</b> [drive_url]: Salin file dari Google Drive lain ke Google Drive Eru.
 <br><br>
 <b>/{BotCommands.CountCommand}</b> [drive_url]: Hitung ukuran dan jumlah file/folder di Google Drive.
 <br><br>
-<b>/{BotCommands.DeleteCommand}</b> [drive_url]: Hapus file dari Google Drive Shion (Hanya Owner & Sudo)
+<b>/{BotCommands.DeleteCommand}</b> [drive_url]: Hapus file dari Google Drive Eru (Hanya Owner & Sudo)
 <br><br>
-<b>/{BotCommands.WatchCommand}</b> [youtube-dl supported link]: Mirror Video dari Situs yang didukung oleh Shion. Klik <b>/{BotCommands.WatchCommand}</b> untuk lebih lanjut.
+<b>/{BotCommands.WatchCommand}</b> [youtube-dl supported link]: Mirror Video dari Situs yang didukung oleh Eru. Klik <b>/{BotCommands.WatchCommand}</b> untuk lebih lanjut.
 <br><br>
-<b>/{BotCommands.TarWatchCommand}</b> [youtube-dl supported link]: Mirror Video dari Situs yang didukung oleh Shion dan Archive sebagai (.tar)
+<b>/{BotCommands.TarWatchCommand}</b> [youtube-dl supported link]: Mirror Video dari Situs yang didukung oleh Eru dan Archive sebagai (.tar)
 <br><br>
-<b>/{BotCommands.ZipWatchCommand}</b> [youtube-dl supported link]: Mirror Video dari Situs yang didukung oleh Shion dan Archive sebagai (.zip)
+<b>/{BotCommands.ZipWatchCommand}</b> [youtube-dl supported link]: Mirror Video dari Situs yang didukung oleh Eru dan Archive sebagai (.zip)
 <br><br>
-<b>/{BotCommands.LeechWatchCommand}</b> [youtube-dl supported link]: Upload Video dari Situs yang didukung oleh Shion ke Telegram.
+<b>/{BotCommands.LeechWatchCommand}</b> [youtube-dl supported link]: Upload Video dari Situs yang didukung oleh Eru ke Telegram.
 <br><br>
-<b>/{BotCommands.LeechTarWatchCommand}</b> [youtube-dl supported link]: Upload Video dari Situs yang didukung oleh Shion ke Telegram dan Archive sebagai (.tar) 
+<b>/{BotCommands.LeechTarWatchCommand}</b> [youtube-dl supported link]: Upload Video dari Situs yang didukung oleh Eru ke Telegram dan Archive sebagai (.tar) 
 <br><br>
-<b>/{BotCommands.LeechZipWatchCommand}</b> [youtube-dl supported link]: Upload Video dari Situs yang didukung oleh Shion ke Telegram dan Archive sebagai (.zip) 
+<b>/{BotCommands.LeechZipWatchCommand}</b> [youtube-dl supported link]: Upload Video dari Situs yang didukung oleh Eru ke Telegram dan Archive sebagai (.zip) 
 <br><br>
 <b>/{BotCommands.LeechSetCommand}</b>: Upload Settings.
 <br><br>
@@ -147,27 +131,27 @@ help_string_telegraph = f'''<br>
 <br><br>
 <b>/{BotCommands.CancelAllCommand}</b>: Membatalkan semua Mirroring
 <br><br>
-<b>/{BotCommands.ListCommand}</b> [search term]: Cari file yang ada di Google Drive Shion.
+<b>/{BotCommands.ListCommand}</b> [search term]: Cari file yang ada di Google Drive Eru.
 <br><br>
-<b>/{BotCommands.StatusCommand}</b>: Tampilkan semua Tugas yang sedang dikerjakan Shion.
+<b>/{BotCommands.StatusCommand}</b>: Tampilkan semua Tugas yang sedang dikerjakan Eru.
 <br><br>
-<b>/{BotCommands.StatsCommand}</b>: Info Shion
+<b>/{BotCommands.StatsCommand}</b>: Info Eru
 '''
 help = Telegraph(access_token=telegraph_token).create_page(
-        title='Shion Help',
+        title='Eru Help',
         author_name='luteg',
         author_url='https://t.me/luteg_glh',
         html_content=help_string_telegraph,
     )["path"]
 
 help_string = f'''
-/{BotCommands.PingCommand}: Ping ke Shion
+/{BotCommands.PingCommand}: Ping ke Eru
 
-/{BotCommands.AuthorizeCommand}: Izinkan Chat untuk menggunakan Shion. (Hanya Owner & Sudo)
+/{BotCommands.AuthorizeCommand}: Izinkan Chat untuk menggunakan Eru. (Hanya Owner & Sudo)
 
-/{BotCommands.UnAuthorizeCommand}: Hapus Izin Chat untuk menggunakan Shion. (Hanya Owner & Sudo)
+/{BotCommands.UnAuthorizeCommand}: Hapus Izin Chat untuk menggunakan Eru. (Hanya Owner & Sudo)
 
-/{BotCommands.AuthorizedUsersCommand}: Lihat daftar chat yang diizinkan menggunakan Shion. (Hanya Owner & Sudo)
+/{BotCommands.AuthorizedUsersCommand}: Lihat daftar chat yang diizinkan menggunakan Eru. (Hanya Owner & Sudo)
 
 /{BotCommands.AddSudoCommand}: Tambahan pengguna Sudo (Hanya Owner)
 
@@ -180,7 +164,7 @@ help_string = f'''
 
 def bot_help(update, context):
     button = button_build.ButtonMaker()
-    button.buildbutton("Other Commands", f"https://telegra.ph/{help}")
+    button.buildbutton("❓ Command Lainnya", f"https://telegra.ph/{help}")
     reply_markup = InlineKeyboardMarkup(button.build_menu(1))
     sendMarkup(help_string, context.bot, update, reply_markup)
 
@@ -191,10 +175,6 @@ botcmds = [
         (f'{BotCommands.TarMirrorCommand}','Start mirroring and upload as .tar'),
         (f'{BotCommands.ZipMirrorCommand}','Start mirroring and upload as .zip'),
         (f'{BotCommands.UnzipMirrorCommand}','Extract files'),
-        (f'{BotCommands.QbMirrorCommand}','Start Mirroring using qBittorrent'),
-        (f'{BotCommands.QbTarMirrorCommand}','Start mirroring and upload as .tar using qb'),
-        (f'{BotCommands.QbZipMirrorCommand}','Start mirroring and upload as .zip using qb'),
-        (f'{BotCommands.QbUnzipMirrorCommand}','Extract files using qBitorrent'),
         (f'{BotCommands.CloneCommand}','Copy file/folder to Drive'),
         (f'{BotCommands.CountCommand}','Count file/folder of Drive link'),
         (f'{BotCommands.DeleteCommand}','Delete file from Drive'),

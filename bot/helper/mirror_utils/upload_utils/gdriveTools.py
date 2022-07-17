@@ -610,7 +610,7 @@ class GoogleDriveHelper:
                     content += f'<b> | <a href="https://telegra.ph/{self.path[nxt_page]}">Next</a></b>'
                     nxt_page += 1
             Telegraph(access_token=telegraph_token).edit_page(path = self.path[prev_page],
-                                 title = 'Shion Search',
+                                 title = 'Eru Search',
                                  author_name='luteg',
                                  author_url='https://t.me/luteg_glh',
                                  html_content=content)
@@ -807,7 +807,7 @@ class GoogleDriveHelper:
 
         for content in self.telegraph_content :
             self.path.append(Telegraph(access_token=telegraph_token).create_page(
-                                                    title = 'Shion Search',
+                                                    title = 'Eru Search',
                                                     author_name='luteg',
                                                     author_url='https://t.me/luteg_glh',
                                                     html_content=content
@@ -840,7 +840,7 @@ class GoogleDriveHelper:
             if drive_file['mimeType'] == self.__G_DRIVE_DIR_MIME_TYPE:
                 self.gDrive_directory(**drive_file)
                 msg += f'<b>🔤 Nama: </b><code>{name}</code>'
-                msg += f'\n<b>💽 Ukuran: </b><code>{get_readable_file_size(self.total_bytes)}</code>'
+                msg += f'\n\n<b>💽 Ukuran: </b><code>{get_readable_file_size(self.total_bytes)}</code>'
                 msg += '\n<b>❓ Jenis: </b><code>Folder</code>'
                 msg += f'\n<b>📂 SubFolders: </b><code>{self.total_folders}</code>'
                 msg += f'\n<b>📁 Files: </b><code>{self.total_files}</code>'

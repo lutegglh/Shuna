@@ -108,7 +108,7 @@ def get_progress_bar_string(status):
     p = min(max(p, 0), 100)
     cFull = p // 8
     cPart = p % 8 - 1
-    p_str = '█' * cFull
+    p_str = '■' * cFull
     if cPart >= 0:
         p_str += PROGRESS_INCOMPLETE[cPart]
     p_str += ' ' * (PROGRESS_MAX_SIZE - cFull)
@@ -135,14 +135,14 @@ def get_readable_message():
                 MirrorStatus.STATUS_EXTRACTING,
                 MirrorStatus.STATUS_SPLITTING,
             ]:
-                msg += f"\n💥 <code>{get_progress_bar_string(download)}</code> {download.progress()}"
+                msg += f"\n💥 {get_progress_bar_string(download)} {download.progress()}"
                 if download.status() == MirrorStatus.STATUS_CLONING:
                     msg += f"\n<b>♻️ Cloned:</b> {get_readable_file_size(download.processed_bytes())} / {download.size()}"
                 elif download.status() == MirrorStatus.STATUS_UPLOADING:
                     msg += f"\n<b>🔺 </b> {get_readable_file_size(download.processed_bytes())} / {download.size()}"
                 else:
                     msg += f"\n<b>🔻 </b> {get_readable_file_size(download.processed_bytes())} / {download.size()}"
-                msg += f"\n<b>🚀 </b> {download.speed()} | <b>⏳ </b> {download.eta()}"
+                msg += f"\n<b>🚀 </b> {download.speed()}\n<b>⏳ </b> {download.eta()}"
                 try:
                     msg += f"\n<b>🌱 Seeders:</b> {download.aria_download().num_seeders}" \
                            f" | <b>🌱 Peers:</b> {download.aria_download().connections}"

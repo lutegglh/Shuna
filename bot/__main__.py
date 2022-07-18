@@ -139,8 +139,8 @@ help_string_telegraph = f'''<br>
 '''
 help = Telegraph(access_token=telegraph_token).create_page(
         title='Eru Help',
-        author_name='luteg',
-        author_url='https://t.me/luteg_glh',
+        author_name='Mirror-gan',
+        author_url='https://t.me/mirror_gan',
         html_content=help_string_telegraph,
     )["path"]
 

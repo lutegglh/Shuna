@@ -213,12 +213,12 @@ class MirrorListener(listeners.MirrorListeners):
                 uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
             count = len(files)
             if self.message.chat.type == 'private':
-                msg = f'<b>🔤 Nama:</b> <code>{link}</code>\n\n'
+                msg = f'<b>🔤 Nama:</b> <code>{link}</code>\n'
                 msg += f'<b>📁 Files:</b> {count}'
                 sendMessage(msg, self.bot, self.update)
             else:
                 chat_id = str(self.message.chat.id)[4:]
-                msg = f"<b>🔤 Nama:</b> <a href='https://t.me/c/{chat_id}/{self.uid}'>{link}</a>\n\n"
+                msg = f"<b>🔤 Nama:</b> <a href='https://t.me/c/{chat_id}/{self.uid}'>{link}</a>\n"
                 msg += f'<b>📁Files:</b> {count}\n'
                 msg += f'👤 diMirror Oleh: {uname}\n\n'
                 fmsg = ''
@@ -291,7 +291,7 @@ class MirrorListener(listeners.MirrorListeners):
             else:
                 uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
             if uname is not None:
-                msg += f'\n\n👤 diMirror Oleh: {uname}\n\n<b>G-DRIVE LINK NOT WORK! USE INDEX LINK!</b>'
+                msg += f'\n\n👤 diMirror Oleh: {uname}'
             try:
                 fs_utils.clean_download(download_dict[self.uid].path())
             except FileNotFoundError:
